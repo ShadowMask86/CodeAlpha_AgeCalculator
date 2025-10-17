@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator-card">
+            <!-- Header -->
+            <div class="header">
+                <i class="fas fa-birthday-cake cake-icon"></i>
+                <h1>Age Calculator</h1>
+                <p>Calculate your exact age in years, months, and days</p>
+            </div>
+
+            <!-- Input Form -->
+            <form class="date-form" id="ageForm">
+                <div class="input-group">
+                    <!-- Day Input -->
+                    <div class="input-field">
+                        <label for="day">Day</label>
+                        <input type="number" id="day" name="day" 
+                               min="1" max="31" placeholder="DD" required>
+                        <div class="error-message" id="dayError"></div>
+                    </div>
+
+                    <!-- Month Input -->
+                    <div class="input-field">
+                        <label for="month">Month</label>
+                        <input type="number" id="month" name="month" 
+                               min="1" max="12" placeholder="MM" required>
+                        <div class="error-message" id="monthError"></div>
+                    </div>
+
+                    <!-- Year Input -->
+                    <div class="input-field">
+                        <label for="year">Year</label>
+                        <input type="number" id="year" name="year" 
+                               min="1900" max="2025" placeholder="YYYY" required>
+                        <div class="error-message" id="yearError"></div>
+                    </div>
+                </div>
+
+                <!-- General Error Message -->
+                <div class="general-error" id="generalError"></div>
+
+                <!-- Calculate Button -->
+                <button type="submit" class="calculate-btn" id="calculateBtn">
+                    <i class="fas fa-calculator"></i>
+                    Calculate Age
+                </button>
+            </form>
+
+            <!-- Results Section -->
+            <div class="results-section" id="resultsSection">
+                <div class="results-grid">
+                    <!-- Years -->
+                    <div class="result-item">
+                        <div class="result-number" id="yearsResult">0</div>
+                        <div class="result-label">Years</div>
+                        <div class="result-icon">🎂</div>
+                    </div>
+
+                    <!-- Months -->
+                    <div class="result-item">
+                        <div class="result-number" id="monthsResult">0</div>
+                        <div class="result-label">Months</div>
+                        <div class="result-icon">📅</div>
+                    </div>
+
+                    <!-- Days -->
+                    <div class="result-item">
+                        <div class="result-number" id="daysResult">0</div>
+                        <div class="result-label">Days</div>
+                        <div class="result-icon">⏰</div>
+                    </div>
+                </div>
+
+                <!-- Additional Info -->
+                <div class="additional-info">
+                    <div class="info-item">
+                        <strong>Total Days Lived:</strong>
+                        <span id="totalDays">0</span> days
+                    </div>
+                    <div class="info-item">
+                        <strong>Total Hours Lived:</strong>
+                        <span id="totalHours">0</span> hours
+                    </div>
+                    <div class="info-item">
+                        <strong>Next Birthday:</strong>
+                        <span id="nextBirthday">-</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Day of Birth:</strong>
+                        <span id="dayOfBirth">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fun Facts Section -->
+            <div class="fun-facts" id="funFacts">
+                <h3><i class="fas fa-lightbulb"></i> Fun Facts</h3>
+                <div class="facts-grid">
+                    <div class="fact-item">
+                        <span class="fact-icon">🌍</span>
+                        <span class="fact-text">You've experienced <strong id="earthRotations">0</strong> Earth rotations!</span>
+                    </div>
+                    <div class="fact-item">
+                        <span class="fact-icon">💓</span>
+                        <span class="fact-text">Your heart has beaten approximately <strong id="heartBeats">0</strong> times!</span>
+                    </div>
+                    <div class="fact-item">
+                        <span class="fact-icon">🎈</span>
+                        <span class="fact-text">You've celebrated <strong id="birthdays">0</strong> birthdays!</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reset Button -->
+            <button class="reset-btn" id="resetBtn">
+                <i class="fas fa-refresh"></i>
+                Calculate Another Age
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
